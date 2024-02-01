@@ -1,0 +1,51 @@
+const mongoose=require('mongoose');
+// mongoose.connect("mongodb://127.0.0.1:27017/teachshala").then(()=>{console.log("database connection successfull")})
+const approvedteachermodel=mongoose.model("teacherdata",({
+    fullname:String,
+    email:String,
+    password:String,
+    highesteducation:String,
+    age:Number,
+    aadhar:String,
+    phone:String,
+    experience:String,
+    modes:{type:Array,default:[]},
+    dateCreated:{type:Date,default:Date.now()},
+    subjects:{type:Array,defeault:[]},
+    tagline:{type:String,default:"Think once, Think twice, Think technology"},
+    fees:String,
+    country:String,
+    city:String,
+    zipcode:String,
+    whatsapp:String,
+    linkedln:String,
+    facebook:String,
+    instagram:String,
+    twitter:String,
+    languages:{
+        type:Array,
+        default:[]
+    },
+    graduation:{
+        type:Object,
+        default:{
+            course:"NA",
+            stream:"NA",
+            yearofcompletion:"NA"
+        }
+    },
+    postgraduation:{
+        type:Object,
+        default:{
+            course:"NA",
+            stream:"NA",
+            yearofcompletion:"NA"
+        }
+    },
+    availability:String,
+    address:String,
+    description:String,
+    classes:{type:Array,default:[]},
+    profile:{type:String,default:"http://localhost:4000/uploads/images/th.jpg"},
+}))
+module.exports=approvedteachermodel;
